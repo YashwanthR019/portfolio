@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yashwanth Ramineni - Professional Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --bg: #D4D4D4;
+      --text: #111;
+      --muted: rgba(0,0,0,0.7);
+      --glass-bg: rgba(255,255,255,0.5);
+      --glass-border: rgba(0,0,0,0.08);
+      --btn-bg: rgba(255,255,255,0.6);
+      --btn-border: rgba(0,0,0,0.1);
+      --accent: #6b4df5;
+      --chip-bg: rgba(0,0,0,0.06);
+    }
+    [data-theme="dark"] {
+      --bg: radial-gradient(120% 100% at 50% 0%, #0b0b10 0%, #161321 100%);
+      --text: #fff;
+      --muted: rgba(255,255,255,0.85);
+      --glass-bg: rgba(255,255,255,0.12);
+      --glass-border: rgba(255,255,255,0.25);
+      --btn-bg: rgba(255,255,255,0.14);
+      --btn-border: rgba(255,255,255,0.25);
+      --accent: #9ea1ff;
+      --chip-bg: rgba(255,255,255,0.12);
+    }
+
+    body {font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;color:var(--text);background:var(--bg);margin:0;padding:0;transition:background .3s,color .3s;overflow-x:hidden;}
+    .glass {background:var(--glass-bg);backdrop-filter:blur(30px) saturate(180%) brightness(110%);border:1px solid var(--glass-border);border-radius:20px;padding:1rem;}
+    .btn {display:inline-block;margin:0.3rem;padding:0.8rem 1.5rem;border-radius:50px;border:1px solid var(--btn-border);background:var(--btn-bg);color:var(--text);transition:all 0.3s ease;text-decoration:none;position:relative;}
+    .btn:hover {background:rgba(255,255,255,0.8);} 
+
+    /* Glow animation */
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent); }
+      50% { box-shadow: 0 0 25px var(--accent), 0 0 50px var(--accent); }
+      100% { box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent); }
+    }
+    .btn.glow {animation: pulseGlow 2.5s infinite;}
+
+    nav {position:sticky;top:16px;z-index:1000;display:flex;justify-content:center;}
+    .nav-inner {display:flex;gap:1.2rem;align-items:center;}
+    .logo {font-weight:800;}
+    a {text-decoration:none;color:var(--muted);} a:hover {color:var(--text);} 
+
+    .hero {text-align:center;padding:6rem 1rem;max-width:900px;margin:auto;}
+    h1 {font-size:2.8rem;margin-bottom:.5rem;}
+    .role {color:var(--muted);margin-bottom:1rem;}
+    .summary {color:var(--muted);max-width:700px;margin:auto;margin-bottom:1.5rem;}
+
+    .section {max-width:1100px;margin:0 auto;padding:2rem 1rem 0;}
+    .section-title {text-align:center;margin:2rem 0 1rem;}
+
+    .skills {display:grid;grid-template-columns:repeat(3, 1fr);gap:1rem;max-width:900px;margin:0 auto;}
+    .skill {display:flex;align-items:center;justify-content:flex-start;gap:.8rem;padding:1rem;font-size:1.1rem;font-weight:600;border-radius:16px;transition:transform .3s, box-shadow .3s;}
+    .skill:hover {transform:translateY(-5px);box-shadow:0 4px 15px rgba(0,0,0,0.1);} 
+    .skill i {font-size:1.6rem;} 
+    .sql i {color:#336791;} .excel i {color:#217346;} .python i {color:#3776AB;} .tableau i {color:#E97627;} .powerbi i {color:#F2C811;} .cloud i {color:#4285F4;} 
+    @media (max-width: 900px) {.skills {grid-template-columns:repeat(2, 1fr);} }
+    @media (max-width: 600px) {.skills {grid-template-columns:1fr;} }
+
+    footer{text-align:center;padding:1rem;margin:3rem auto;color:var(--muted)}
+    #themeToggle {position:fixed;bottom:25px;right:25px;width:55px;height:55px;border-radius:50%;border:1px solid var(--btn-border);background:var(--btn-bg);color:var(--text);font-size:1.3rem;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:1500;}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner glass">
+      <div class="logo">Yashwanth Ramineni</div>
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact-me">Contact</a>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <h1>Yashwanth Ramineni</h1>
+    <div class="role">Business Analytics Professional</div>
+    <p class="summary">Delivering actionable insights with SQL, Python, and BI tools. Experienced in data visualization, KPI dashboards, and predictive analytics.</p>
+    <a class="btn glow" href="#contact-me"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+  </section>
+
+  <section id="skills" class="section">
+    <h2 class="section-title">Core Technical Skills</h2>
+    <div class="skills">
+      <div class="skill glass sql"><i class="fa-solid fa-database"></i> SQL</div>
+      <div class="skill glass excel"><i class="fa-solid fa-file-excel"></i> Excel</div>
+      <div class="skill glass python"><i class="fa-brands fa-python"></i> Python</div>
+      <div class="skill glass tableau"><i class="fa-solid fa-chart-line"></i> Tableau</div>
+      <div class="skill glass powerbi"><i class="fa-solid fa-chart-pie"></i> Power BI</div>
+      <div class="skill glass cloud"><i class="fa-solid fa-cloud"></i> Cloud (AWS/GCP/Azure)</div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="glass" style="padding:1rem 1.2rem;margin-bottom:1rem;">
+      <h3 style="margin:.2rem 0"><i class="fa-solid fa-briefcase" style="color:#6b4df5;margin-right:.4rem"></i>Business Analyst — State Farm</h3>
+      <div class="muted">Dallas, TX • Jan 2024 – Present</div>
+      <ul>
+        <li>Developed Tableau dashboards tracking KPIs, reducing reporting time by <strong>25%</strong> and enabling analysis of <strong>50k+ transactions/month</strong>.</li>
+        <li>Built predictive models in Python/R with SQL data pulls, improving forecast accuracy by <strong>12%</strong>.</li>
+        <li>Automated Excel reporting (pivots, VLOOKUP, INDEX/MATCH), saving <strong>25 hrs/week</strong> @ <strong>98%</strong> accuracy.</li>
+        <li>Drove stakeholder requirements and data quality initiatives across teams.</li>
+      </ul>
+      <div class="muted" style="margin-top:.6rem">
+        <span class="chip">Tableau</span><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">Excel</span>
+      </div>
+    </div>
+
+    <div class="glass" style="padding:1rem 1.2rem;margin-bottom:1rem;">
+      <h3 style="margin:.2rem 0"><i class="fa-solid fa-briefcase" style="color:#6b4df5;margin-right:.4rem"></i>Business Analyst — TeqData</h3>
+      <div class="muted">Dallas, TX • May 2023 – Dec 2023</div>
+      <ul>
+        <li>Designed Power BI dashboards improving visibility and reducing manual reporting by <strong>20%</strong>.</li>
+        <li>Applied statistical analysis and data mining (SQL, R, Python) to deliver actionable insights.</li>
+        <li>Automated Excel workflows (macros, pivots) reducing effort by <strong>20 hrs/week</strong> with <strong>98%</strong> accuracy.</li>
+        <li>Root‑cause analysis cut cycle time by <strong>10%</strong> across departments.</li>
+      </ul>
+      <div class="muted" style="margin-top:.6rem">
+        <span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">Python</span><span class="chip">Excel</span>
+      </div>
+    </div>
+
+    <div class="glass" style="padding:1rem 1.2rem;">
+      <h3 style="margin:.2rem 0"><i class="fa-solid fa-briefcase" style="color:#6b4df5;margin-right:.4rem"></i>Junior Business Analyst — Wipro</h3>
+      <div class="muted">Hyderabad, India • Mar 2021 – Jun 2022</div>
+      <ul>
+        <li>Managed large datasets with SQL, reducing report generation time by <strong>30%</strong>.</li>
+        <li>Built Tableau/Excel dashboards for non‑technical stakeholders to track KPIs and trends.</li>
+        <li>Performed descriptive & inferential analyses for predictive modeling, boosting efficiency by <strong>10%</strong>.</li>
+        <li>Improved data quality and reduced reporting errors by <strong>35%</strong> through collaboration.</li>
+      </ul>
+      <div class="muted" style="margin-top:.6rem">
+        <span class="chip">SQL</span><span class="chip">Tableau</span><span class="chip">Excel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="section">
+    <h2 class="section-title">Certifications</h2>
+    <div class="glass" style="display:flex;gap:.75rem;align-items:flex-start;padding:1rem;margin-bottom:1rem;">
+      <i class="fa-solid fa-award" style="font-size:1.3rem;color:#e67e22"></i>
+      <div>
+        <h3 style="margin:.2rem 0">Salesforce Certified Administrator</h3>
+        <div class="muted">Issued May 2023</div>
+        <div class="muted" style="margin-top:.4rem">Add official verification link</div>
+      </div>
+    </div>
+    <div class="glass" style="display:flex;gap:.75rem;align-items:flex-start;padding:1rem;margin-bottom:1rem;">
+      <i class="fa-solid fa-award" style="font-size:1.3rem;color:#8e44ad"></i>
+      <div>
+        <h3 style="margin:.2rem 0">Google UX Design Professional Certificate</h3>
+        <div class="muted">Issued May 2023</div>
+        <div class="muted" style="margin-top:.4rem">Add Coursera / Credly link</div>
+      </div>
+    </div>
+    <div class="glass" style="display:flex;gap:.75rem;align-items:flex-start;padding:1rem;margin-bottom:1rem;">
+      <i class="fa-solid fa-award" style="font-size:1.3rem;color:#2980b9"></i>
+      <div>
+        <h3 style="margin:.2rem 0">IBM Data Science Capstone Project</h3>
+        <div class="muted">Issued Sep 2021</div>
+        <div class="muted" style="margin-top:.4rem">Add Coursera link</div>
+      </div>
+    </div>
+    <div class="glass" style="display:flex;gap:.75rem;align-items:flex-start;padding:1rem;">
+      <i class="fa-solid fa-award" style="font-size:1.3rem;color:#16a085"></i>
+      <div>
+        <h3 style="margin:.2rem 0">Data Analysis with Python</h3>
+        <div class="muted">Issued Jul 2021</div>
+        <div class="muted" style="margin-top:.4rem">Add Coursera link</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-me" class="section" style="text-align:center;padding:4rem 1rem;">
+    <h2 class="section-title">Contact Me</h2>
+    <p style="color:var(--muted);max-width:600px;margin:0 auto 1.5rem;">Have a project, opportunity, or collaboration in mind? Feel free to reach out — I'd love to connect!</p>
+    <a href="mailto:yashwanthramineni@gmail.com" class="btn glow"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+  </section>
+
+  <footer class="glass" style="max-width:1100px;margin:0 auto 24px;padding:1rem 16px;text-align:center">
+    <div style="font-weight:700">YR Portfolio</div>
+    <div class="muted">© 2025 Yashwanth Ramineni. All rights reserved.</div>
+  </footer>
+
+  <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
+  <script>
+    const toggle=document.getElementById('themeToggle');
+    const root=document.documentElement;
+    const saved=localStorage.getItem('theme');
+    const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme=saved|| (prefersDark? 'dark':'light');
+    root.setAttribute('data-theme',theme);
+    toggle.textContent=theme==='dark'?'☀️':'🌙';
+
+    toggle.addEventListener('click',()=>{
+      const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+      root.setAttribute('data-theme',next);
+      localStorage.setItem('theme',next);
+      toggle.textContent=next==='dark'?'☀️':'🌙';
+    });
+  </script>
+</body>
+</html>
